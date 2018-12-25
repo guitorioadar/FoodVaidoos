@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FoodVaidoos</string>
+    <string name="login_via_google">Login via Google</string>
+    <string name="login_via_facebook">Login via Facebook</string>
+    <string name="login_via_email_id">Login via Email-ID</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

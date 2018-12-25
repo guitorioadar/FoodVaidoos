@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/food" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#30000000"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/react_shape">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="142dp"
+            android:layout_marginLeft="142dp"
+            android:layout_marginRight="142dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/food_logo"
+            tools:ignore="VectorDrawableCompat"
+            android:background="@drawable/image_background"
+            android:padding="15dp"/>
+
+        <Button
+            android:id="@+id/btnFacebook"
+            fontPath="fonts/Roboto-Bold.ttf"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginStart="50dp"
+            android:background="@color/facebookBlue"
+            android:text="@string/login_via_facebook"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/btnGoogle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:id="@+id/btnGoogle"
+            fontPath="fonts/Roboto-Bold.ttf"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/googleRed"
+            android:text="@string/login_via_google"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/btnEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:id="@+id/btnEmail"
+            fontPath="fonts/Roboto-Bold.ttf"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@color/colorAccent"
+            android:text="@string/login_via_email_id"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingPrefix"
+            android:onClick="btnEmailOption"/>
+
+        <TextView
+            android:id="@+id/textView"
+            fontPath="fonts/Roboto-Bold.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="36dp"
+            android:layout_marginEnd="163dp"
+            android:layout_marginLeft="163dp"
+            android:layout_marginRight="163dp"
+            android:layout_marginStart="163dp"
+            android:text="@string/don_t_have_an_account_register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingPrefix" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
