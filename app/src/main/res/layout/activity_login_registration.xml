@@ -34,7 +34,7 @@
             android:layout_marginRight="142dp"
             android:layout_marginStart="142dp"
             android:layout_marginTop="48dp"
-            android:background="@drawable/image_background"
+            android:background="@drawable/bg_image_background"
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +100,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingPrefix" />
+            tools:ignore="MissingPrefix"
+            android:onClick="goBackToLanding"/>
 
     </android.support.constraint.ConstraintLayout>
 

@@ -1,6 +1,7 @@
 package com.vaidoos.foodvaidoos.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -49,6 +50,12 @@ public class LoginRegistrationActivity extends AppCompatActivity {
         adapter.addFragment(new LoginFragment(), "Login");
         adapter.addFragment(new RegistrationFragment(), "Register");
         viewPager.setAdapter(adapter);
+    }
+
+    public void goBackToLanding(View view) {
+
+        startActivity(new Intent(this,MainActivity.class));
+
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

@@ -13,16 +13,31 @@
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/AppThemeFullScreen">
+
+        </activity>
+
+        <activity android:name=".activity.StartWizardActivity"
+            android:theme="@style/AppThemeFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activity.LoginRegistrationActivity"
             android:theme="@style/AppThemeFullScreen">
 
         </activity>
+
+        <activity android:name=".activity.TestOneActivity"
+            android:theme="@style/AppThemeFullScreen">
+
+        </activity>
+
+        <activity android:name=".activity.TestTwoActivity"
+            android:theme="@style/AppThemeFullScreen"/>
+
     </application>
 
 </manifest>

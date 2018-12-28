@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/food_logo"
             tools:ignore="VectorDrawableCompat"
-            android:background="@drawable/image_background"
+            android:background="@drawable/bg_image_background"
             android:padding="15dp"/>
 
         <Button
