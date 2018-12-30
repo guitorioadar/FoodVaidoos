@@ -10,7 +10,7 @@ import com.vaidoos.foodvaidoos.R;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MainActivity extends AppCompatActivity {
+public class InitialLoginActivity extends AppCompatActivity {
 
     @Override
     protected void attachBaseContext(Context newBase) {

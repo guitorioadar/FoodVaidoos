@@ -54,7 +54,7 @@ public class LoginRegistrationActivity extends AppCompatActivity {
 
     public void goBackToLanding(View view) {
 
-        startActivity(new Intent(this,MainActivity.class));
+        startActivity(new Intent(this,InitialLoginActivity.class));
 
     }
 
