@@ -1,5 +1,6 @@
 package com.vaidoos.foodvaidoos.activity;
 
+import android.content.Context;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -14,12 +15,21 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.vaidoos.foodvaidoos.R;
 import com.vaidoos.foodvaidoos.fragment.LoginFragment;
 import com.vaidoos.foodvaidoos.fragment.RegistrationFragment;
+import com.vaidoos.foodvaidoos.fragment.UserProfileFragment;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HomeActivity extends AppCompatActivity {
 
     private final String TAG = "HomeActivity";
 
     private BottomNavigationBar bottomNavigationBar;
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,31 +66,32 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
             @Override
             public void onTabSelected(int position) {
-                if (position==0){
-                    loadFragment(new LoginFragment());
-                }else if (position==1){
-                    loadFragment(new RegistrationFragment());
+
+                switch ( position ){
+                    case 0:
+                        loadFragment(new LoginFragment());
+                        toolbar.setTitle("Home");
+                        break;
+                    case 1:
+                        loadFragment(new RegistrationFragment());
+                        toolbar.setTitle("Category");
+                        break;
+                    case 2:
+                        Log.d(TAG, "onTabSelected: 3");
+                        break;
+                    case 3:
+                        loadFragment(new UserProfileFragment());
+                        toolbar.setTitle("Profile");
+                        break;
                 }
-
                 Log.d(TAG, "onTabSelected: Selected: "+position);
-
             }
             @Override
             public void onTabUnselected(int position) {
-                /*if (position==0){
-                    loadFragment(new LoginFragment());
-                }else if (position==1){
-                    loadFragment(new RegistrationFragment());
-                }*/
                 Log.d(TAG, "onTabSelected: UnSelected: "+position);
             }
             @Override
             public void onTabReselected(int position) {
-                /*if (position==0){
-                    loadFragment(new LoginFragment());
-                }else if (position==1){
-                    loadFragment(new RegistrationFragment());
-                }*/
                 Log.d(TAG, "onTabSelected: ReSelected: "+position);
             }
         });
