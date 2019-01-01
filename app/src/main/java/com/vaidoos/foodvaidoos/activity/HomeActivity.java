@@ -1,6 +1,8 @@
 package com.vaidoos.foodvaidoos.activity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,7 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -22,6 +28,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class HomeActivity extends AppCompatActivity {
 
     private final String TAG = "HomeActivity";
+
+    private Toolbar toolbar;
 
     private BottomNavigationBar bottomNavigationBar;
 
@@ -40,7 +48,8 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setMode(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
 
-        final Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
+
         toolbar.setTitle("Home");
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.img_hamburger_white_24dp));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -53,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        setSupportActionBar(toolbar);
 
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.bn_home, "Home"))
@@ -106,5 +116,45 @@ public class HomeActivity extends AppCompatActivity {
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+
+        /*MenuInflater inflater = getMenuInflater();
+        // Inflate menu to add items to action bar if it is present.
+        inflater.inflate(R.menu.menu_home, menu);
+
+        menu.findItem(R.id.log_out).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+
+                Snackbar.make(toolbar,"CLicked",Snackbar.LENGTH_SHORT).show();
+                //Log.d(TAG, "onMenuItemClick: clicked");
+                
+                return true;
+            }
+        });*/
+
+        menu.add(0, 1, 0, "Log Out")
+                .setIcon(R.drawable.tb_logout)
+                .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+
+                        Snackbar.make(toolbar,"CLicked",Snackbar.LENGTH_SHORT).show();
+
+                        /*SharedPrefClear(HomeActivity.this);
+
+                        Toast.makeText(HomeActivity.this, "Logout successful", Toast.LENGTH_SHORT).show();
+
+                        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+                        finish();*/
+                        return true;
+                    }
+                })
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+
+        return true;
     }
 }

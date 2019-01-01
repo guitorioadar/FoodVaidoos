@@ -37,5 +37,4 @@ dependencies {
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:2.1.2'               // indicator
     implementation 'de.hdodenhof:circleimageview:2.2.0'                             // Circle Image
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'             // BottomNavigation
-
 }
