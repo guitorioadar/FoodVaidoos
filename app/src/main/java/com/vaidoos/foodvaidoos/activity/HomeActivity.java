@@ -106,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        loadFragment(new LoginFragment());
+        loadFragment(new UserProfileFragment());
 
     }
 
