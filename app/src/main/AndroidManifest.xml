@@ -35,6 +35,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--Profile Activities-->
+
+        <activity android:name=".activity.profile.ProfileEditActivity"
+            android:theme="@style/AppThemeFullScreen">
+
+        </activity>
+
     </application>
 
 </manifest>

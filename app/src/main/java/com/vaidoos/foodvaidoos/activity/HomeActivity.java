@@ -49,8 +49,8 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationBar.setMode(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
 
         toolbar = findViewById(R.id.toolbar);
-
-        toolbar.setTitle("Home");
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.img_hamburger_white_24dp));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        setSupportActionBar(toolbar);
+
 
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.bn_home, "Home"))
