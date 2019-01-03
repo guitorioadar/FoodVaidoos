@@ -23,7 +23,9 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
             <TextView
                 android:id="@+id/textView27"
@@ -50,7 +52,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/imageButtonUpload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
@@ -64,14 +66,14 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/imageButtonDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:background="@null"
                 android:tint="@color/colorAccent"
-                app:layout_constraintStart_toStartOf="@+id/imageButton3"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+                app:layout_constraintStart_toStartOf="@+id/imageButtonUpload"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonUpload"
                 app:srcCompat="@drawable/garbage"
                 tools:ignore="VectorDrawableCompat" />
 
@@ -90,6 +92,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/circleProEditPic" />
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -97,9 +100,11 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView29" >
+                app:layout_constraintTop_toBottomOf="@+id/textView29">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -111,13 +116,51 @@
                         android:id="@+id/etProEditName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/location"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/name"
                         android:drawablePadding="16dp"
                         android:drawableTint="@color/colorAccent"
                         android:gravity="center_vertical"
-                        android:padding="8dp"
                         android:hint="Name"
-                        android:background="@null"/>
+                        android:padding="8dp"
+                        android:textSize="14sp"
+                        android:windowSoftInputMode="stateHidden|adjustResize" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#30000000" />
+
+                    <EditText
+                        android:id="@+id/etProEditContactNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/contact_no"
+                        android:drawablePadding="16dp"
+                        android:drawableTint="@color/colorAccent"
+                        android:gravity="center_vertical"
+                        android:hint="Contact No"
+                        android:padding="8dp"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#30000000" />
+
+                    <EditText
+                        android:id="@+id/etProEditEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/email"
+                        android:drawablePadding="16dp"
+                        android:drawableTint="@color/colorAccent"
+                        android:gravity="center_vertical"
+                        android:hint="Email"
+                        android:padding="8dp"
+                        android:textSize="14sp" />
 
                     <View
                         android:layout_width="match_parent"
@@ -127,6 +170,22 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/btnProEditUodate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_blue_button"
+                android:text="Update Profile"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cardView4"
+                app:layout_constraintStart_toStartOf="@+id/cardView4"
+                app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
         </android.support.constraint.ConstraintLayout>
 

@@ -10,14 +10,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import com.vaidoos.foodvaidoos.R;
+import com.vaidoos.foodvaidoos.dialogs.BottomSheetImageChoose;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class ProfileEditActivity extends AppCompatActivity {
+public class ProfileEditActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbarProfileEdit;
+    private ImageButton imageButtonUpload,imageButtonDelete;
 
 
     @Override
@@ -30,7 +34,8 @@ public class ProfileEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit);
 
-        toolbarProfileEdit = findViewById(R.id.toolbarProfileEdit);
+        initializeView();
+
         toolbarProfileEdit.setTitle("");
         setSupportActionBar(toolbarProfileEdit);
         toolbarProfileEdit.setNavigationIcon(getResources().getDrawable(R.drawable.left_arrow));
@@ -40,6 +45,18 @@ public class ProfileEditActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+    }
+
+    private void initializeView() {
+        toolbarProfileEdit = findViewById(R.id.toolbarProfileEdit);
+
+        imageButtonUpload = findViewById(R.id.imageButtonUpload);
+        imageButtonUpload.setOnClickListener(this);
+        imageButtonDelete = findViewById(R.id.imageButtonDelete);
+
     }
 
     @Override
@@ -65,5 +82,17 @@ public class ProfileEditActivity extends AppCompatActivity {
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch ( view.getId() ){
+            case R.id.imageButtonUpload: {
+                //Snackbar.make(imageButtonUpload, "Clicked", Snackbar.LENGTH_SHORT).show();
+                BottomSheetImageChoose bottomSheetImageChoose = new BottomSheetImageChoose(this);
+                bottomSheetImageChoose.showBottomSheet();
+                break;
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.vaidoos.foodvaidoos.R;
+import com.vaidoos.foodvaidoos.dialogs.DialogLogOut;
 import com.vaidoos.foodvaidoos.fragment.LoginFragment;
 import com.vaidoos.foodvaidoos.fragment.RegistrationFragment;
 import com.vaidoos.foodvaidoos.fragment.UserProfileFragment;
@@ -121,21 +122,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
 
-        /*MenuInflater inflater = getMenuInflater();
-        // Inflate menu to add items to action bar if it is present.
-        inflater.inflate(R.menu.menu_home, menu);
-
-        menu.findItem(R.id.log_out).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-
-                Snackbar.make(toolbar,"CLicked",Snackbar.LENGTH_SHORT).show();
-                //Log.d(TAG, "onMenuItemClick: clicked");
-                
-                return true;
-            }
-        });*/
-
         menu.add(0, 1, 0, "Log Out")
                 .setIcon(R.drawable.tb_logout)
                 .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
@@ -143,6 +129,11 @@ public class HomeActivity extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {
 
                         Snackbar.make(toolbar,"CLicked",Snackbar.LENGTH_SHORT).show();
+
+                        DialogLogOut dialogLogOut = new DialogLogOut(HomeActivity.this);
+                        //dialogLogOut.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                        dialogLogOut.show();
+
 
                         /*SharedPrefClear(HomeActivity.this);
 
