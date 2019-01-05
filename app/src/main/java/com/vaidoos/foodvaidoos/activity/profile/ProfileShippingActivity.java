@@ -2,8 +2,6 @@ package com.vaidoos.foodvaidoos.activity.profile;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,18 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 
 import com.vaidoos.foodvaidoos.R;
-import com.vaidoos.foodvaidoos.dialogs.BottomSheetImageChoose;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class ProfileEditActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProfileShippingActivity extends AppCompatActivity {
 
-    private Toolbar toolbarProfileEdit;
-    private ImageButton imageButtonUpload,imageButtonDelete;
-
+    private Toolbar toolbarShipping;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -30,16 +24,15 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_edit);
-
+        setContentView(R.layout.activity_profile_shipping);
         initializeView();
 
-        toolbarProfileEdit.setTitle("");
-        setSupportActionBar(toolbarProfileEdit);
-        toolbarProfileEdit.setNavigationIcon(getResources().getDrawable(R.drawable.left_arrow));
-        toolbarProfileEdit.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbarShipping.setTitle("");
+        setSupportActionBar(toolbarShipping);
+        toolbarShipping.setNavigationIcon(getResources().getDrawable(R.drawable.left_arrow));
+        toolbarShipping.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -50,24 +43,18 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initializeView() {
-        toolbarProfileEdit = findViewById(R.id.toolbarProfileEdit);
-
-        imageButtonUpload = findViewById(R.id.imageButtonUpload);
-        imageButtonUpload.setOnClickListener(this);
-        imageButtonDelete = findViewById(R.id.imageButtonDelete);
-
+        toolbarShipping = findViewById(R.id.toolbarShipping);
     }
 
     @Override
     public boolean onCreateOptionsMenu( Menu menu) {
-
         menu.add(0, 1, 0, "Log Out")
                 .setIcon(R.drawable.tb_logout)
                 .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
 
-                        Snackbar.make(toolbarProfileEdit,"Clicked",Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(toolbarShipping,"Clicked",Snackbar.LENGTH_SHORT).show();
 
                         /*SharedPrefClear(HomeActivity.this);
 
@@ -83,15 +70,4 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
         return true;
     }
 
-    @Override
-    public void onClick(View view) {
-        switch ( view.getId() ){
-            case R.id.imageButtonUpload: {
-                //Snackbar.make(imageButtonUpload, "Clicked", Snackbar.LENGTH_SHORT).show();
-                BottomSheetImageChoose bottomSheetImageChoose = new BottomSheetImageChoose(this);
-                bottomSheetImageChoose.showBottomSheet();
-                break;
-            }
-        }
-    }
 }

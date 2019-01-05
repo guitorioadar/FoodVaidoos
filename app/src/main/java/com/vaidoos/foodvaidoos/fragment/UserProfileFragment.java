@@ -9,11 +9,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.vaidoos.foodvaidoos.R;
+import com.vaidoos.foodvaidoos.activity.profile.ProfileChangePasswordActivity;
 import com.vaidoos.foodvaidoos.activity.profile.ProfileEditActivity;
+import com.vaidoos.foodvaidoos.activity.profile.ProfileShippingActivity;
 
 public class UserProfileFragment extends Fragment{
 
     private TextView btnProfileEdit;
+    private TextView tvProChangePass;
+    private TextView tvProShipping;
 
     public UserProfileFragment() {
         // Required empty public constructor
@@ -39,12 +43,29 @@ public class UserProfileFragment extends Fragment{
             }
         });
 
+        tvProChangePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ProfileChangePasswordActivity.class));
+            }
+        });
+
+        tvProShipping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ProfileShippingActivity.class));
+            }
+        });
+
         return view;
     }
 
     private void initializeView(View view) {
 
         btnProfileEdit = view.findViewById(R.id.btnProfileEdit);
+
+        tvProChangePass = view.findViewById(R.id.tvProChangePass);
+        tvProShipping = view.findViewById(R.id.tvProShipping);
 
     }
 

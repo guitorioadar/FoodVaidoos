@@ -36,16 +36,16 @@ public class BottomSheetImageChoose {
         });*/
 
         mBottomSheetDialog = new BottomSheetDialog(context,R.style.SheetDialog);
-        mBottomSheetDialog.setContentView(R.layout.sheet_basic);
+        mBottomSheetDialog.setContentView(R.layout.sheet_temp);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mBottomSheetDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
 
         //mBottomSheetDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        name = mBottomSheetDialog.findViewById(R.id.name);
+        /*name = mBottomSheetDialog.findViewById(R.id.name);
         name.setText("This is the name");
         address = mBottomSheetDialog.findViewById(R.id.address);
-        address.setText("This is the content and the address");
+        address.setText("This is the content and the address");*/
 
         mBottomSheetDialog.show();
         mBottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
