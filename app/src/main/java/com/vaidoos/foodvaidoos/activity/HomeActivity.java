@@ -80,15 +80,18 @@ public class HomeActivity extends AppCompatActivity {
 
                 switch ( position ){
                     case 0:
-                        loadFragment(new LoginFragment());
+                        //loadFragment(new LoginFragment());
                         toolbar.setTitle("Home");
+                        startActivity(new Intent(HomeActivity.this,TestOneActivity.class));
                         break;
                     case 1:
-                        loadFragment(new RegistrationFragment());
+                        //loadFragment(new RegistrationFragment());
                         toolbar.setTitle("Category");
+	                    startActivity(new Intent(HomeActivity.this,TestTwoActivity.class));
                         break;
                     case 2:
                         Log.d(TAG, "onTabSelected: 3");
+	                    toolbar.setTitle("Cart");
                         break;
                     case 3:
                         loadFragment(new UserProfileFragment());
@@ -108,6 +111,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         loadFragment(new UserProfileFragment());
+        bottomNavigationBar.selectTab(3);
 
     }
 

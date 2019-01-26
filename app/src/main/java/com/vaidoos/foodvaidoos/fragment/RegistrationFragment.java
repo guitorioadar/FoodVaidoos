@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.vaidoos.foodvaidoos.R;
+import com.vaidoos.foodvaidoos.activity.HomeActivity;
 import com.vaidoos.foodvaidoos.activity.TestTwoActivity;
 
 /**
@@ -37,7 +38,7 @@ public class RegistrationFragment extends Fragment {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), TestTwoActivity.class));
+                startActivity(new Intent(getActivity(), HomeActivity.class));
             }
         });
 

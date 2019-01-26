@@ -1,6 +1,7 @@
 package com.vaidoos.foodvaidoos.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -36,6 +37,13 @@ public class StartWizardActivity extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.startWiazrdViewPager);
         dotsIndicator = (DotsIndicator) findViewById(R.id.dots_indicator);
+
+	    findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View v) {
+			    startActivity(new Intent(StartWizardActivity.this,InitialLoginActivity.class));
+		    }
+	    });
 
         int images[] = {
                 R.drawable.food_one,
